@@ -19,7 +19,6 @@
             overflow-x: hidden;
         }
         header {
-            background: linear-gradient(135deg, #ff0000, #ff8000);
             color: #fff;
             padding: 30px 15px;
             text-align: center;
@@ -29,6 +28,33 @@
             top: 0;
             left: 0;
             z-index: 10;
+            animation: colorChange 20s infinite; /* Animation to change colors */
+        }
+        @keyframes colorChange {
+            0% {
+                background: #ffcc00; /* SpongeBob yellow */
+            }
+            14% {
+                background: #f1c40f; /* A golden yellow */
+            }
+            28% {
+                background: #3498db; /* SpongeBob's underwater blue */
+            }
+            42% {
+                background: #e74c3c; /* Krabby Patty red */
+            }
+            56% {
+                background: #9b59b6; /* Purple from Squidward's house */
+            }
+            70% {
+                background: #1abc9c; /* SpongeBob’s oceanic green */
+            }
+            84% {
+                background: #f39c12; /* Sandy’s orange color */
+            }
+            100% {
+                background: #ff6347; /* Tomato red for Patrick */
+            }
         }
         h1 {
             font-size: 3.5em;
@@ -170,6 +196,23 @@
             Object.values(sections).forEach(s => s.style.display = 'none');
             sections[section].style.display = 'block';
         }
+
+        function downloadFile() {
+            // Content for the KrustyKrabHub Lite download (as text)
+            const content = "-- KrustyKrabHub Lite Download --\n\n" +
+                            "Loadstring: loadstring(game:HttpGet('https://raw.githubusercontent.com/mrkrabzthe1stYT/KrustyKrabHub/refs/heads/main/KrustyKrabHub%20V1.1.0'))()\n\n"+
+                            "-- Don't be a dick, join the discord server that way we know how good it is or bad! --\n\n"+
+                            "-- Enjoy your gameplay with KrustyKrabHub! --\n\n";
+
+            // Create a Blob object from the content
+            const blob = new Blob([content], { type: 'text/plain' });
+
+            // Create an anchor element to trigger the download
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'KrustyKrabHub_Lite.txt';  // Set the name of the file
+            a.click(); // Trigger the download
+        }
     </script>
 </head>
 <body onload="showSection('home')">
@@ -188,7 +231,7 @@
         <div class="card" id="home-info">
             <h2>Welcome to KrustyKrabHub!</h2>
             <p>Elevate your Arsenal gameplay with the ultimate cheat hub! Get exclusive access to features that will give you the upper hand in every match.</p>
-            <a href="#" class="download-button">Download KrustyKrabHub Lite</a>
+            <a href="#" class="download-button" onclick="downloadFile()">Download KrustyKrabHub Lite</a>
         </div>
         <div class="card" id="service-info" style="display:none;">
             <h2>Service Options</h2>
