@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrustyKrabHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #181818;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #ff0000, #ff8000);
+            color: #fff;
+            padding: 30px 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        h1 {
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            color: #ffcccc;
+            transform: scale(1.1);
+        }
+        main {
+            margin-top: 120px;
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin: 30px 0;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.4);
+        }
+        .card h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .card p {
+            font-size: 1.1em;
+            color: #ddd;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff0000;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-top: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .download-button:hover {
+            background-color: #ff8000;
+            transform: scale(1.05);
+        }
+        .service-option {
+            margin-bottom: 20px;
+        }
+        .service-option h3 {
+            font-size: 1.8em;
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #ff0000;
+            color: white;
+            position: relative;
+        }
+        footer p {
+            font-size: 1.1em;
+        }
+        .service-info, .loadstring-input {
+            margin-top: 20px;
+            padding: 20px;
+            background: #3e3e3e;
+            border-radius: 10px;
+            border: 1px solid #ff0000;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .loadstring-input input {
+            width: 100%;
+            padding: 15px;
+            background: #2a2a2a;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1em;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+        .loadstring-input input:focus {
+            outline: none;
+            border-color: #ff8000;
+        }
+        .payment-note {
+            color: #ff6666;
+            font-size: 1em;
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            nav a {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+            main {
+                padding: 30px 15px;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        function showSection(section) {
+            const sections = {
+                home: document.getElementById('home-info'),
+                service: document.getElementById('service-info'),
+                about: document.getElementById('about-info'),
+                contact: document.getElementById('contact-info'),
+                loadstring: document.getElementById('loadstring-info')
+            };
+            Object.values(sections).forEach(s => s.style.display = 'none');
+            sections[section].style.display = 'block';
+        }
+    </script>
+</head>
+<body onload="showSection('home')">
+    <header>
+        <h1>KrustyKrabHub</h1>
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('service')">Service</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="showSection('loadstring')">Loadstring</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="card" id="home-info">
+            <h2>Welcome to KrustyKrabHub!</h2>
+            <p>Elevate your Arsenal gameplay with the ultimate cheat hub! Get exclusive access to features that will give you the upper hand in every match.</p>
+            <a href="#" class="download-button">Download KrustyKrabHub Lite</a>
+        </div>
+        <div class="card" id="service-info" style="display:none;">
+            <h2>Service Options</h2>
+            <div class="service-option">
+                <h3>KrustyKrabHub</h3>
+                <p>Free KrustyKrabHub, giving you an edge in Arsenal with advanced cheats. The full version is available for free!</p>
+            </div>
+        </div>
+        <div class="card" id="about-info" style="display:none;">
+            <h2>About KrustyKrabHub</h2>
+            <p>At KrustyKrabHub, we prioritize your gaming experience. Our cheat hub is meticulously designed to provide users with advanced tools that elevate your Arsenal gameplay. With a dedicated support team and regular updates, we ensure that our cheats remain effective and undetectable. Choose us to gain an advantage, enhance your skills, and enjoy an unbeatable gaming experience. Join our community today and unlock your true potential!</p>
+        </div>
+        <div class="card" id="contact-info" style="display:none;">
+            <h2>Contact Us</h2>
+            <p>Discord Server: <a href="https://discord.gg/2YkUfFEEnp" style="color: #ff8000;">https://discord.gg/2YkUfFEEnp</a></p>
+        </div>
+        <div class="card" id="loadstring-info" style="display:none;">
+            <h2>Loadstring</h2>
+            <div class="loadstring-input">
+                <input type="text" value="loadstring(game:HttpGet('https://raw.githubusercontent.com/mrkrabzthe1stYT/KrustyKrabHub/refs/heads/main/KrustyKrabHub%20V1.1.0'))()" readonly>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KrustyKrabHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
